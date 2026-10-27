@@ -1,0 +1,73 @@
+/* 컬러 팔레트 디자인 시스템.md 의 CSS 변수 (출처: insplanet.co.kr) */
+:root {
+  /* Primary Colors */
+  --color-primary: #3E3F44;
+  --color-primary-light: #A6A7AD;
+  --color-primary-dark: #141414;
+
+  /* Secondary Colors */
+  --color-secondary: #0F0E0E;
+  --color-accent: #F03A3A;
+  --color-accent-warm: #F5A623;
+  --color-accent-glow: #F03A3A4D;
+
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F4F5F6;
+  --color-bg-dark: #141414;
+
+  /* Text Colors */
+  --color-text-primary: #3E3F44;
+  --color-text-secondary: #797B87;
+  --color-text-muted: #B5B5B5;
+  --color-text-on-dark: #FFFFFF;
+
+  /* Border Colors */
+  --color-border: #E5E5E5;
+  --color-border-soft: #E8E9F0;
+  --color-border-focus: #3E3F44;
+
+  /* Interactive Colors */
+  --color-button-primary: #3E3F44;
+  --color-button-hover: #141414;
+  --color-link: #3E3F44;
+  --color-link-hover: #F03A3A;
+
+  /* Gradient / Shadow */
+  --gradient-progress: linear-gradient(90deg, #61C7FF 0%, #B899FF 40%, #FF6BF2 75%, #FF1AD1 100%);
+  --shadow-soft: 0 2px 12px #0000002E;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(14px, 0.4464vw + 9.43px, 18px);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-link);
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
