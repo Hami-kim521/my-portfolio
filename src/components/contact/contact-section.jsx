@@ -14,7 +14,7 @@ const panelSx = {
 };
 
 /**
- * Home 의 Contact 섹션. 왼쪽: 연락처 / SNS, 오른쪽: 방명록 작성 / 목록.
+ * Home 의 Contact 섹션. 위: 방명록 목록(전체 너비), 아래 왼쪽: 연락처 / SNS, 아래 오른쪽: 방명록 작성.
  *
  * Example usage:
  * <ContactSection />
@@ -37,21 +37,22 @@ export default function ContactSection() {
           </Typography>
         </Box>
 
+        <Paper elevation={ 0 } sx={ { ...panelSx, mb: { xs: 2, md: 3 } } }>
+          <Typography sx={ { fontWeight: 700, mb: 2, color: colors.warmText } }>
+            💌 방명록 ({ entries.length })
+          </Typography>
+          <GuestbookList entries={ entries } isLoading={ isLoading } error={ error } />
+        </Paper>
+
         <Grid container spacing={ { xs: 2, md: 3 } }>
           <Grid size={ { xs: 12, md: 6 } }>
             <Paper elevation={ 0 } sx={ panelSx }>
               <ContactLinks />
             </Paper>
           </Grid>
-          <Grid size={ { xs: 12, md: 6 } } sx={ { display: 'flex', flexDirection: 'column', gap: 2 } }>
+          <Grid size={ { xs: 12, md: 6 } }>
             <Paper elevation={ 0 } sx={ panelSx }>
               <GuestbookForm onSubmit={ addEntry } />
-            </Paper>
-            <Paper elevation={ 0 } sx={ panelSx }>
-              <Typography sx={ { fontWeight: 700, mb: 2, color: colors.warmText } }>
-                💌 방명록 ({ entries.length })
-              </Typography>
-              <GuestbookList entries={ entries } isLoading={ isLoading } error={ error } />
             </Paper>
           </Grid>
         </Grid>
