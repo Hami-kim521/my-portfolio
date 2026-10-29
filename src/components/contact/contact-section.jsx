@@ -13,6 +13,9 @@ const panelSx = {
   borderRadius: 3,
 };
 
+/** 나란히 놓인 두 패널이 같은 높이가 되도록 늘려 줍니다. */
+const fillHeightSx = { height: '100%', display: 'flex', flexDirection: 'column' };
+
 /**
  * Home 의 Contact 섹션. 위: 방명록 목록(전체 너비), 아래 왼쪽: 연락처 / SNS, 아래 오른쪽: 방명록 작성.
  *
@@ -46,12 +49,12 @@ export default function ContactSection() {
 
         <Grid container spacing={ { xs: 2, md: 3 } }>
           <Grid size={ { xs: 12, md: 6 } }>
-            <Paper elevation={ 0 } sx={ panelSx }>
+            <Paper elevation={ 0 } sx={ { ...panelSx, ...fillHeightSx } }>
               <ContactLinks />
             </Paper>
           </Grid>
           <Grid size={ { xs: 12, md: 6 } }>
-            <Paper elevation={ 0 } sx={ panelSx }>
+            <Paper elevation={ 0 } sx={ { ...panelSx, ...fillHeightSx } }>
               <GuestbookForm onSubmit={ addEntry } />
             </Paper>
           </Grid>

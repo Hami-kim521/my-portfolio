@@ -22,7 +22,7 @@ const SNS_ICONS = {
  */
 export default function ContactLinks() {
   return (
-    <Box sx={ { display: 'flex', flexDirection: 'column', gap: 3 } }>
+    <Box sx={ { display: 'flex', flexDirection: 'column', gap: 3, flex: 1, justifyContent: 'space-between' } }>
       <Box>
         <Typography sx={ { fontWeight: 700, mb: 1.5, color: colors.warmText } }>
           📮 편하게 연락 주세요!
