@@ -4,7 +4,7 @@ import ProjectLinks from './project-links.jsx';
 import ProjectMockup from './project-mockup.jsx';
 
 /**
- * 프로젝트 한 장의 카드. 호버 시 1.2배 확대 + 아래쪽 옅은 그림자(터치 기기에서는 눌림 효과).
+ * 프로젝트 한 장의 카드. 호버 시 1.02배 확대 + 아래쪽 옅은 그림자(터치 기기에서는 눌림 효과).
  *
  * @param {object} project - projects 테이블의 한 행 [Required]
  * @param {function} onViewDetails - View Details 클릭 시 project 를 넘겨 실행 [Required]
@@ -36,7 +36,7 @@ export default function ProjectCard({ project, onViewDetails }) {
         transition: 'transform 0.25s ease, box-shadow 0.25s ease',
         '&:active': { transform: 'scale(0.98)' },
         '@media (hover: hover)': {
-          '&:hover': { transform: 'scale(1.2)', boxShadow: '0 12px 20px -8px rgba(0, 0, 0, 0.12)', zIndex: 2 },
+          '&:hover': { transform: 'scale(1.02)', boxShadow: '0 12px 20px -8px rgba(0, 0, 0, 0.12)', zIndex: 2 },
         },
       } }
     >
