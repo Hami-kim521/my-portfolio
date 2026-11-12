@@ -1,22 +1,18 @@
-import { Box, Card, CardContent, Container, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import { colors } from '../theme.js'
 
-// About / Projects 페이지가 공유하는 중앙정렬 카드 틀
+// Projects 등 서브 페이지가 공유하는 미니멀 페이지 틀 (왼쪽 정렬, 큰 제목)
 export default function PageShell({ label, title, children }) {
   return (
-    <Box sx={{ bgcolor: colors.bgSecondary, minHeight: 'calc(100vh - 64px)', py: { xs: 6, md: 10 } }}>
-      <Container maxWidth="md">
-        <Card elevation={0} sx={{ textAlign: 'center', border: `1px solid ${colors.border}`, borderRadius: { xs: 3, md: 4 } }}>
-          <CardContent sx={{ p: { xs: 3, md: 8 } }}>
-            <Typography variant="overline" sx={{ color: colors.accent, fontWeight: 700, letterSpacing: 2 }}>
-              {label}
-            </Typography>
-            <Typography variant="h4" component="h1" sx={{ mt: 1, mb: 2 }}>
-              {title}
-            </Typography>
-            <Typography sx={{ color: colors.textSecondary }}>{children}</Typography>
-          </CardContent>
-        </Card>
+    <Box sx={{ bgcolor: colors.bgPrimary, minHeight: 'calc(100vh - 64px)', py: { xs: 8, md: 14 } }}>
+      <Container maxWidth="lg">
+        <Typography variant="overline" sx={{ color: colors.textSecondary }}>
+          {label}
+        </Typography>
+        <Typography variant="h1" sx={{ mt: 1, mb: 3, fontSize: { xs: '2.8rem', md: '5rem' }, lineHeight: 1.05, fontWeight: 400 }}>
+          {title}
+        </Typography>
+        <Typography sx={{ color: colors.textSecondary, maxWidth: 560 }}>{children}</Typography>
       </Container>
     </Box>
   )

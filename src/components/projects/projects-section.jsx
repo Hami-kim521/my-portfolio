@@ -20,14 +20,24 @@ export default function ProjectsSection() {
     <Box
       id="projects"
       component="section"
-      sx={{ bgcolor: colors.bgSecondary, py: { xs: 6, md: 10 }, overflow: 'hidden', scrollMarginTop: '64px' }}
+      sx={{
+        bgcolor: colors.bgPrimary,
+        py: { xs: 8, md: 14 },
+        overflow: 'hidden',
+        scrollMarginTop: '64px',
+        borderTop: `1px solid ${colors.border}`,
+      }}
     >
       <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
-        <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-          <Typography variant="overline" sx={{ color: colors.accent, fontWeight: 700, letterSpacing: 2 }}>
-            04 · PROJECTS
+        <Box sx={{ mb: { xs: 4, md: 8 } }}>
+          <Typography variant="overline" sx={{ color: colors.textSecondary }}>
+            [04] PROJECTS
           </Typography>
-          <Typography variant="h4" component="h2" sx={{ mt: 1, fontSize: { xs: '1.6rem', md: '2.2rem' } }}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{ mt: 1, fontSize: { xs: '2.4rem', md: '4.5rem' }, lineHeight: 1.05, fontWeight: 400 }}
+          >
             Projects
           </Typography>
         </Box>

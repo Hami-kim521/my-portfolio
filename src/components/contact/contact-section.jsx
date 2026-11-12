@@ -10,7 +10,7 @@ const panelSx = {
   p: { xs: 2.5, md: 3 },
   bgcolor: colors.bgPrimary,
   border: `1px solid ${colors.border}`,
-  borderRadius: 3,
+  borderRadius: 0,
 };
 
 /** 나란히 놓인 두 패널이 같은 높이가 되도록 늘려 줍니다. */
@@ -26,13 +26,21 @@ export default function ContactSection() {
   const { entries, isLoading, error, addEntry } = useGuestbook();
 
   return (
-    <Box id="contact" component="section" sx={ { bgcolor: colors.warmBg, py: { xs: 6, md: 10 } } }>
-      <Container maxWidth="md" sx={ { px: { xs: 2, md: 3 } } }>
-        <Box sx={ { textAlign: 'center', mb: { xs: 4, md: 6 } } }>
-          <Typography variant="overline" sx={ { color: colors.accent, fontWeight: 700, letterSpacing: 2 } }>
-            05 · CONTACT
+    <Box
+      id="contact"
+      component="section"
+      sx={ { bgcolor: colors.bgSecondary, py: { xs: 8, md: 14 }, borderTop: `1px solid ${colors.border}` } }
+    >
+      <Container maxWidth="lg" sx={ { px: { xs: 2, md: 3 } } }>
+        <Box sx={ { mb: { xs: 4, md: 8 } } }>
+          <Typography variant="overline" sx={ { color: colors.textSecondary } }>
+            [05] CONTACT
           </Typography>
-          <Typography variant="h4" component="h2" sx={ { mt: 1, mb: 1.5, fontSize: { xs: '1.6rem', md: '2.2rem' } } }>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={ { mt: 1, mb: 2, fontSize: { xs: '2.4rem', md: '4.5rem' }, lineHeight: 1.05, fontWeight: 400 } }
+          >
             Contact
           </Typography>
           <Typography sx={ { color: colors.warmText } }>

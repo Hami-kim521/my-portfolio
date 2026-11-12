@@ -1,41 +1,27 @@
-/* 컬러 팔레트 디자인 시스템.md 의 CSS 변수 (출처: insplanet.co.kr) */
+/* 포트폴리오 기획서의 무채색 팔레트 (레퍼런스: bpco.kr) */
 :root {
-  /* Primary Colors */
-  --color-primary: #3E3F44;
-  --color-primary-light: #A6A7AD;
-  --color-primary-dark: #141414;
+  --color-primary: #121212;
+  --color-primary-light: #C5C5C5;
+  --color-primary-dark: #000000;
 
-  /* Secondary Colors */
-  --color-secondary: #0F0E0E;
-  --color-accent: #F03A3A;
-  --color-accent-warm: #F5A623;
-  --color-accent-glow: #F03A3A4D;
-
-  /* Background Colors */
   --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F4F5F6;
-  --color-bg-dark: #141414;
+  --color-bg-secondary: #F1F1F1;
+  --color-bg-dark: #121212;
 
-  /* Text Colors */
-  --color-text-primary: #3E3F44;
-  --color-text-secondary: #797B87;
-  --color-text-muted: #B5B5B5;
+  --color-text-primary: #121212;
+  --color-text-secondary: #6B6B6B;
+  --color-text-muted: #C5C5C5;
   --color-text-on-dark: #FFFFFF;
 
-  /* Border Colors */
-  --color-border: #E5E5E5;
-  --color-border-soft: #E8E9F0;
-  --color-border-focus: #3E3F44;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-border-focus: #121212;
 
-  /* Interactive Colors */
-  --color-button-primary: #3E3F44;
-  --color-button-hover: #141414;
-  --color-link: #3E3F44;
-  --color-link-hover: #F03A3A;
+  --color-link: #121212;
+  --color-link-hover: #6B6B6B;
 
-  /* Gradient / Shadow */
-  --gradient-progress: linear-gradient(90deg, #61C7FF 0%, #B899FF 40%, #FF6BF2 75%, #FF1AD1 100%);
-  --shadow-soft: 0 2px 12px #0000002E;
+  --font-main: "Space Grotesk", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Mono", Pretendard, ui-monospace, monospace;
+  --font-point: "Rock Salt", cursive;
 }
 
 *,
@@ -44,11 +30,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* 상단에 고정된 헤더 높이만큼 비워 두어, 포커스·앵커 이동 시 내용이 헤더 뒤에 가려지지 않게 합니다. */
+  scroll-padding-top: 96px;
+}
+
 body {
   margin: 0;
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-main);
   font-size: clamp(14px, 0.4464vw + 9.43px, 18px);
   line-height: 1.5;
 }
@@ -66,6 +58,9 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   * {
     transition: none !important;
     animation: none !important;

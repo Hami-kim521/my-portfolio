@@ -1,22 +1,28 @@
-import Section from '../components/Section.jsx'
+import SkillsSection from '../components/skills/skills-section.jsx'
+import HomeHero from '../components/HomeHero.jsx'
+import Marquee from '../components/Marquee.jsx'
+import Reveal from '../components/Reveal.jsx'
 import ContactSection from '../components/contact/contact-section.jsx'
 import ProjectsSection from '../components/projects/projects-section.jsx'
-import { colors } from '../theme.js'
+import HomeAboutSection from '../components/about/home-about-section.jsx'
 
 export default function Home() {
   return (
     <>
-      <Section id="hero" label="01 · HERO" title="Hero" dark>
-        여기는 Hero 섹션입니다. 메인 비주얼, 이름, 간단 소개가 들어갈 예정입니다.
-      </Section>
-      <Section id="about" label="02 · ABOUT ME" title="About Me" bg={colors.bgSecondary} buttonLabel="더 알아보기">
-        여기는 About Me 섹션입니다. 간단한 자기소개와 '더 알아보기' 버튼이 들어갈 예정입니다.
-      </Section>
-      <Section id="skills" label="03 · SKILL TREE" title="Skill Tree">
-        여기는 Skill Tree 섹션입니다. 기술 스택을 트리나 프로그레스바로 시각화할 예정입니다.
-      </Section>
-      <ProjectsSection />
-      <ContactSection />
+      <HomeHero />
+      <Marquee />
+      <Reveal>
+        <HomeAboutSection />
+      </Reveal>
+      <Reveal>
+        <SkillsSection />
+      </Reveal>
+      <Reveal>
+        <ProjectsSection />
+      </Reveal>
+      <Reveal>
+        <ContactSection />
+      </Reveal>
     </>
   )
 }
